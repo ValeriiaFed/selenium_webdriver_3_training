@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 
 public class LeftMenuNavigationTest extends BaseTest {
 
-    private static final String MENU_ITEM = "//span[contains(., '%s')]";
+    private static final String MENU_ITEM = "//span[text()= '%s']";
     private static final String SUB_MENU_ITEMS_LIST = ".selected .docs li";
     private static final String PAGE_TITLE = "h1";
     private static final String MENU_NAMES_LIST = "name";
