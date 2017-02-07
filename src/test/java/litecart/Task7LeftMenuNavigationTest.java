@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class LeftMenuNavigationTest extends BaseTest {
+public class Task7LeftMenuNavigationTest extends BaseTest {
 
     private static final String MENU_ITEM = "//li[@id='app-']//span[@class='name' and text()='%s']";
     private static final String SUB_MENU_ITEMS_LIST = ".selected .docs li";
@@ -19,9 +19,8 @@ public class LeftMenuNavigationTest extends BaseTest {
     @Test
     public void leftMenuNavigationTest() {
         login();
-        List<String> menuNamesList = getMenuNamesList();
 
-        for (String menuName: menuNamesList){
+        for (String menuName: getMenuNamesList()){
             clickOnMenuItem(menuName);
             titleIsDisplayedVerify();
 
@@ -71,13 +70,5 @@ public class LeftMenuNavigationTest extends BaseTest {
             menuNamesList.add(menuName.getText());
         }
         return menuNamesList;
-    }
-
-    private void login() {
-        driver.get("http://localhost:8080/litecart/admin/");
-        driver.findElement(By.name("username")).sendKeys("admin");
-        driver.findElement(By.name("password")).sendKeys("admin");
-        driver.findElement(By.name("login")).click();
-        wait.until(ExpectedConditions.titleIs("My Store"));
     }
 }
