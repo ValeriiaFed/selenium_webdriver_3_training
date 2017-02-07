@@ -57,8 +57,6 @@ public class Task9CountriesAndGeoZonesTest extends BaseTest {
         assertEquals(countriesList, sortedCountriesList);
     }
 
-
-
     private List<String> getCountriesList() {
         List<String> countriesList = new ArrayList<String>();
         for (WebElement countryName: driver.findElements(By.cssSelector(COUNTRY_NAME_LIST))){
