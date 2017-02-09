@@ -25,7 +25,7 @@ public class Task3LoginTest {
         driver.get("http://localhost:8080/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
-        driver.findElement(By.name("login")).click();
+        driver.findElement(By.name("loginToAdmin")).click();
         wait.until(ExpectedConditions.titleIs("My Store"));
     }
 

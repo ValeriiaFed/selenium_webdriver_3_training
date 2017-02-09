@@ -24,7 +24,7 @@ public class Task9CountriesAndGeoZonesTest extends BaseTest {
 
     @Test
     public void countriesTest() {
-        login();
+        loginToAdmin();
         goToPage(COUNTRIES_PAGE_URL);
         sortingIsCorrectVerify(getCountriesList());
 
@@ -37,7 +37,7 @@ public class Task9CountriesAndGeoZonesTest extends BaseTest {
 
     @Test
     public void geoZonesTest() {
-        login();
+        loginToAdmin();
         goToPage(GEO_ZONES_PAGE_URL);
 
         for (String country: getCountriesList()){

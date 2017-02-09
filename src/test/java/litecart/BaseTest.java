@@ -29,17 +29,17 @@ public class BaseTest {
 
     @Before
     public void setUp(){
-       // driver = new ChromeDriver();
+        driver = new ChromeDriver();
 
 //        DesiredCapabilities caps = new DesiredCapabilities();
 //        caps.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, true);
 //        driver = new InternetExplorerDriver(caps);
 
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability(FirefoxDriver.MARIONETTE, true);
-        driver = new FirefoxDriver(
-                new FirefoxBinary(new File(MOZILLA_FIREFOX_NIGHTLY_54)),
-                new FirefoxProfile(), caps);
+//        DesiredCapabilities caps = new DesiredCapabilities();
+//        caps.setCapability(FirefoxDriver.MARIONETTE, true);
+//        driver = new FirefoxDriver(
+//                new FirefoxBinary(new File(MOZILLA_FIREFOX_NIGHTLY_54)),
+//                new FirefoxProfile(), caps);
 
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 20);
@@ -55,11 +55,11 @@ public class BaseTest {
         return driver.findElements(by).size() > 0;
     }
 
-    public void login() {
+    public void loginToAdmin() {
         goToPage(BASE_URL_ADMIN);
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
-        driver.findElement(By.name("login")).click();
+        driver.findElement(By.name("loginToAdmin")).click();
         wait.until(ExpectedConditions.titleIs("My Store"));
     }
 

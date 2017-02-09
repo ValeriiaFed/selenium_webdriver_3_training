@@ -2,7 +2,6 @@ package litecart;
 
 import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ public class Task7LeftMenuNavigationTest extends BaseTest {
 
     @Test
     public void leftMenuNavigationTest() {
-        login();
+        loginToAdmin();
 
         for (String menuName: getMenuNamesList()){
             clickOnMenuItem(menuName);
