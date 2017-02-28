@@ -18,7 +18,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BaseTest {
 
     public static final String BASE_URL_ADMIN = "http://localhost:8080/litecart/admin/";
-    public static final String BASE_URL = "http://localhost:8080/litecart/";
     public static final String MOZILLA_FIREFOX_NIGHTLY_54 = "C:\\Program Files\\Nightly\\firefox.exe";
 
     public WebDriver driver;
@@ -53,14 +52,11 @@ public class BaseTest {
     }
 
     public void loginToAdmin() {
-        goToPage(BASE_URL_ADMIN);
+        driver.get(BASE_URL_ADMIN);
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
         driver.findElement(By.name("login")).click();
         wait.until(ExpectedConditions.titleIs("My Store"));
     }
 
-    public void goToPage(String pageUrl) {
-        driver.get(pageUrl);
-    }
 }
